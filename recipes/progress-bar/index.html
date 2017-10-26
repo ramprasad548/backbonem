@@ -1,0 +1,67 @@
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <title>Marionette Examples: Rendering Lists</title>
+  <!-- A CSS normalizer -->
+  <link rel="stylesheet" href="../../bower_components/html5-reset/assets/css/reset.css">
+  <!-- Some more style -->
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <style>
+    .progress-bar .bar {
+      height: 5px;
+      background: blue;
+      width: 0;
+      -webkit-transition:width 2s, background-color 2s, -webkit-transform 2s;
+    }
+
+    .bar.mid {
+      width: 50%;
+    }
+
+    .bar.done {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+
+    <h1>Progress Bar</h1>
+    <p>
+    </p>
+
+    <h2>When To Use</h2>
+    This progress bar is pretty simple. Its a basic Marionette ItemView that has three states, empty, mid, done.
+
+    There are buttons that drive the transitions between the states.
+    <p>
+    </p>
+
+    <h2>Example</h2>
+    <p>
+      The following mark up is rendered by the code found in <code>progress-bar.js</code>:
+    </p>
+
+    <div id="example" style="border:5px solid black; height: 500px;">
+    </div>
+
+  <!-- Install our three dependencies -->
+  <script src="../../bower_components/jquery/dist/jquery.js"></script>
+  <script src="../../bower_components/underscore/underscore.js"></script>
+  <script src="../../bower_components/backbone/backbone.js"></script>
+  <script src='../../bower_components/marionette/lib/backbone.marionette.js'></script>
+
+
+  <script type="text/html" id="progress-bar-tpl">
+    <div class='bar'></div>
+    <div class="controls" style="margin:100px;">
+        <button class="button play" id="b-0">0%</button>
+        <button class="button play" id="b-50">50%</button>
+        <button class="button play" id="b-100">Done</button>
+    </div>
+  </script>
+
+  <!-- Our script; this is where everything happens -->
+  <script src="progress-bar.js"></script>
+
+</body></html>
